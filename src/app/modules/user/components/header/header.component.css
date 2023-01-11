@@ -1,0 +1,55 @@
+mat-toolbar{
+    height: 10%;
+    background-color: #1D1D1D;
+}
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+a:hover{
+    cursor: pointer;
+}
+.label-btn{
+
+
+    height: 100%;
+    width: 20%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 46px;
+    line-height: 58px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+.spacer{
+    flex: 1 1 auto;
+}
+.nav-btn{
+    height: 100%;
+    width: 12%;
+
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-log-out{
+    background-color:#b13d20;
+    border-radius: 15px;
+    height: 80%;
+}
+.nav-log-out:hover{
+    background-color:rgb(138, 50, 28);
+}

@@ -1,0 +1,75 @@
+<div class="body" cdkDropListGroup>
+    <div class="ideas">
+        <p class="board-label">Ideas</p>
+        <div class="add">
+            <button mat-icon-button (click)="addIdeas()" class="add-btn">
+                <mat-icon>add</mat-icon>
+            </button>
+            <input [(ngModel)]="ideasToAdd" class="add-input">
+        </div>
+        
+        <div
+            cdkDropList 
+            class="board-items-holder"
+            (cdkDropListDropped)="onDrop($event)"
+            [cdkDropListData]="ideas">
+            <div 
+                class="ideas-board-item" 
+                *ngFor="let task of ideas" 
+                cdkDrag>
+                <p>{{task}}</p>
+                <button mat-icon-button (click)="removeIdeas($event)">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="in-progress">
+        <p class="board-label">In progress</p>
+        <div class="add">
+            <button mat-icon-button (click)="addInProgress()" class="add-btn">
+                <mat-icon>add</mat-icon>
+            </button>
+            <input [(ngModel)]="inProgressToAdd" class="add-input">
+        </div>
+        <div
+            cdkDropList 
+            class="board-items-holder"
+            (cdkDropListDropped)="onDrop($event)"
+            [cdkDropListData]="inProgress">
+            <div 
+                class="in-progress-board-item" 
+                *ngFor="let task of inProgress" 
+                cdkDrag>
+                <p>{{task}}</p>
+                <button mat-icon-button>
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="done">
+        <p class="board-label">Done</p>
+        <div class="add">
+            <button mat-icon-button (click)="addDone()" class="add-btn">
+                <mat-icon>add</mat-icon>
+            </button>
+            <input [(ngModel)]="doneToAdd" class="add-input">
+        </div>
+        <div
+            cdkDropList 
+            class="board-items-holder"
+            (cdkDropListDropped)="onDrop($event)"
+            [cdkDropListData]="done">
+            <div 
+                class="done-board-item" 
+                *ngFor="let task of done" 
+                cdkDrag>
+                <p>{{task}}</p>
+                <button mat-icon-button>
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</div> 

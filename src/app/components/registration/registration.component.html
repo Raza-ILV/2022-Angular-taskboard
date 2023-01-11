@@ -1,0 +1,40 @@
+<div class="body">
+    <mat-card>
+        <mat-card-content>
+            <p style="margin-top: 4%;">Registration</p>
+            <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()" class="form">
+                <p style="font-size: 30px; margin-top: 0%;">Name</p>
+                <input 
+                    type="text" 
+                    formControlName="name"
+                >
+                <p style="font-size: 30px; margin-top: 0%;">Email</p>
+                <input 
+                    type="email" 
+                    formControlName="email"
+                >
+                <p style="font-size: 30px; margin-top: 0%;">Password</p>
+                <input type="password"
+                    type="password"
+                    formControlName="password"
+                    placeholder="4-16 symbols"
+                >
+                <div style="display: flex; justify-content: space-around;
+                margin-top: 1%; margin-bottom: 1%;">
+                    <a routerLink="../login">
+                        <p style="font-size: 22px; text-decoration: underline;">Log in</p>
+                    </a>
+                    <a routerLink="../forgot-password">
+                        <p style="font-size: 22px; text-decoration: underline;">Forgot password</p>
+                    </a>
+                </div>
+                <button>
+                    <p style="color: #000; font-size: 26px;margin: 0 auto;">
+                        Register
+                    </p>
+                </button>
+            </form>
+            
+        </mat-card-content>
+    </mat-card>
+</div>
