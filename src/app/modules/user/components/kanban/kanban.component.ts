@@ -1,5 +1,6 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
+import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 import { BoardService } from 'src/app/services/board.service';
 
 
@@ -29,27 +30,27 @@ export class KanbanComponent implements OnInit {
 
 
 
-  addIdeas(){
+  addIdeas(columnIndex:number){
     if(this.ideasToAdd == null || this.ideasToAdd == ""){
       console.log('Try to add empty task')
     } else {
-      this.board.addIdeasData(this.ideasToAdd)
+      this.board.addTaskData(this.ideasToAdd, columnIndex)
     }
     this.ideasToAdd = ''
   }
-  addInProgress(){
+  addInProgress(columnIndex:number){
     if(this.inProgressToAdd == null || this.inProgressToAdd == ""){
       console.log('Try to add empty task')
     } else {
-      this.board.addInProgressData(this.inProgressToAdd)
+      this.board.addTaskData(this.inProgressToAdd, columnIndex)
     }
     this.ideasToAdd = ''
   }
-  addDone(){
+  addDone(columnIndex:number){
     if(this.doneToAdd == null || this.doneToAdd == ""){
       console.log('Try to add empty task')
     } else {
-      this.board.addDoneData(this.doneToAdd)
+      this.board.addTaskData(this.doneToAdd, columnIndex)
     }
     this.ideasToAdd = ''
   }
@@ -57,9 +58,15 @@ export class KanbanComponent implements OnInit {
 
 
 
-  removeIdeas(event: any){
-    console.log(event)
+  removeTask(fullList: Array<any>, task: string, columnIndex: number){
+    let taskIndex = fullList.findIndex((x:string) => x === task)
+    fullList.splice(taskIndex, 1)
+    let data = this.board.returnTempData(this.board.returnTempUser())
+    let parseData = JSON.parse(data)
+    parseData[3][columnIndex] = fullList
+    localStorage.setItem(this.board.returnTempUser(), JSON.stringify(parseData))
   }
+
 
 
 

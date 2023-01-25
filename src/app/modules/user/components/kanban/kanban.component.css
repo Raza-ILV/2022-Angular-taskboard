@@ -4,6 +4,7 @@
 
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask3127%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='url(%23SvgjsLinearGradient3128)'%3e%3c/rect%3e%3cpath d='M58 1080L1138 0L1760.5 0L680.5 1080z' fill='url(%23SvgjsLinearGradient3129)'%3e%3c/path%3e%3cpath d='M745.6 1080L1825.6 0L2179.6 0L1099.6 1080z' fill='url(%23SvgjsLinearGradient3129)'%3e%3c/path%3e%3cpath d='M1850 1080L770 0L225.5 0L1305.5 1080z' fill='url(%23SvgjsLinearGradient3130)'%3e%3c/path%3e%3cpath d='M1210.4 1080L130.4000000000001 0L-444.0999999999999 0L635.9000000000001 1080z' fill='url(%23SvgjsLinearGradient3130)'%3e%3c/path%3e%3cpath d='M1067.9054196040915 1080L1920 227.90541960409143L1920 1080z' fill='url(%23SvgjsLinearGradient3129)'%3e%3c/path%3e%3cpath d='M0 1080L852.0945803959086 1080L 0 227.90541960409143z' fill='url(%23SvgjsLinearGradient3130)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask3127'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='10.94%25' y1='119.44%25' x2='89.06%25' y2='-19.44%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient3128'%3e%3cstop stop-color='rgba(0%2c 143%2c 122%2c 1)' offset='0.12'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 137%2c 186%2c 1)' offset='0.51'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 143%2c 122%2c 1)' offset='0.9'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='0%25' y1='100%25' x2='100%25' y2='0%25' id='SvgjsLinearGradient3129'%3e%3cstop stop-color='rgba(132%2c 94%2c 194%2c 0.81)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(132%2c 94%2c 194%2c 0.81)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='100%25' y1='100%25' x2='0%25' y2='0%25' id='SvgjsLinearGradient3130'%3e%3cstop stop-color='rgba(132%2c 94%2c 194%2c 0.81)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(132%2c 94%2c 194%2c 0.81)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
 
+    
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -16,7 +17,7 @@
     border-radius: 30px;
 
     display: flex;
-    justify-content:flex-start;
+    justify-content:space-evenly;
     align-items: center;
     flex-direction: column;
 }
@@ -45,7 +46,7 @@ p{
 .board-items-holder{
     align-self: center;
     width: 95%;
-    height: 75%;
+    height: 70%;
 
     overflow-y: scroll;
 }
@@ -57,7 +58,7 @@ p{
 }
 .add-input{
     height: 50px;
-    width: 75%;
+    width: 65%;
     border-radius: 30px;
 
     background-color: rgba(56, 56, 56, 1);
@@ -159,10 +160,101 @@ p{
     width: 10px;
 }
 .board-items-holder::-webkit-scrollbar-track {
-    background-color: rgb(70, 70, 70);
     border-radius: 20px;
 }
 .board-items-holder::-webkit-scrollbar-thumb {
     background-color: rgb(95, 95, 95);
     border-radius: 20px;
 }
+
+
+/* More than half */
+@media (max-width: 1400px){
+    .ideas, .in-progress, .done{
+        width: 32%;
+    }
+}
+/* Half */
+@media (max-width: 1000px){
+    .body{
+        display: block;
+        overflow-y: scroll;
+    }
+    .ideas, .in-progress, .done{
+        margin: 20px auto;
+        width: 90%;
+        height: 50%;
+    }
+    .board-items-holder{
+        height: 55%;
+    }
+    .body::-webkit-scrollbar {
+        width: 20px;
+    }
+    .body::-webkit-scrollbar-track {
+        background-color: #0c5555;
+        border-radius: 20px;
+       
+    }
+    .body::-webkit-scrollbar-thumb {
+        background-color: #286e6e;
+        border-radius: 20px; 
+        
+    }
+}
+/* Less than half */
+@media (max-width: 700px){
+    .board-label{
+        font-size: 26px;
+    }
+}
+/* Phone vertical */
+@media (max-width: 540px){
+    .ideas-board-item p, .in-progress-board-item p, .done-board-item p{
+        font-size: 18px;
+    }
+    .ideas-board-item, .in-progress-board-item, .done-board-item{
+        margin-top: 15px;
+        height: 15%;
+    }
+    .ideas-board-item button, .in-progress-board-item button, .done-board-item button{
+        align-self: center;
+        height: 50px;
+        width: 50px;
+    }
+    .board-label{
+        font-size: 20px;
+    }
+    .board-items-holder{
+        height: 60%;
+    }
+}
+/* Phone horizontal */
+@media (max-height: 420px){
+    .body{
+        display: flex;
+        height: 80%;
+        width: 100%;
+        overflow: hidden;
+    }
+    .ideas, .in-progress, .done{
+        width: 32%;
+        height: 80%;
+    }
+    .board-label{
+        font-size: 16px;
+    }
+    .board-items-holder{
+        height: 50%;
+    }
+    .ideas-board-item button, .in-progress-board-item button, .done-board-item button{
+        align-self: center;
+        margin: 0px 0px;
+    }
+    .ideas-board-item, .in-progress-board-item, .done-board-item{
+        margin-top: 10px;
+        height: 20px;
+    }
+}
+
+

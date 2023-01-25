@@ -8,6 +8,14 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  currentPageIsBoard: boolean = true
+  switchPage(){
+    if(this.currentPageIsBoard){
+      this.currentPageIsBoard = false
+    } else {
+      this.currentPageIsBoard = true
+    }
+  }
   constructor(private guard: AuthGuard, private auth: AuthService){}
   logOut(){
     this.auth.logOutUser()

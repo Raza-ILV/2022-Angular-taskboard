@@ -24,9 +24,9 @@ export class RegistrationComponent implements OnInit{
     console.log(this.reactiveForm)
     if(this.reactiveForm.valid){
       this.auth.registrateUser(
-        this.reactiveForm.value.email,
+        this.reactiveForm.value.email[0].toLowerCase() + this.reactiveForm.value.email.slice(1),
         [
-          this.reactiveForm.value.name,
+          this.reactiveForm.value.name[0].toUpperCase() + this.reactiveForm.value.name.slice(1),
           this.reactiveForm.value.password + "__UNITAG",
           this.auth.generateToken(),
           [[], [], []]

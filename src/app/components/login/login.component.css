@@ -18,7 +18,7 @@ p{
     color: #FFFFFF;
     margin:0;
 }
-mat-card{
+mat-card{  
     width: 35%;
     height: 65%;
     border-radius: 30px;
@@ -54,6 +54,27 @@ input{
     padding-inline: 5%;
     border: 2px solid #FFF;
 }
+.nav-btn{
+    font-size: 22px; text-decoration: underline;
+}
+.nav-btns{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.l-0{
+    margin-top: 4%;
+}
+.l-1{
+    font-size: 30px; margin-top: 4%;
+}
+.l-2{
+    font-size: 30px; margin-top: 3%;
+}
+.l-3{
+    font-size: 30px; margin-top: 3%;
+}
 
 
 
@@ -71,3 +92,107 @@ button{
 button:hover{
     background-color: #b38e44;
 }
+
+
+
+/* More than half */
+@media (max-width: 1400px){
+    mat-card{
+        width: 50%;
+    }
+    mat-card-content{
+        justify-content: center;
+    }
+
+}
+/* Half */
+@media (max-width: 1000px){
+    mat-card{
+        width: 70%;
+    }
+    mat-card-content{
+        justify-content: center;
+    }
+}
+/* Less than half */
+@media (max-width: 700px){
+    mat-card{
+        width: 90%;
+    }
+    .nav-btn{
+        font-size: 20px;
+    }
+    mat-card-content{
+        justify-content: center;
+    }
+}
+/* Phone vertical */
+@media (max-width: 540px){
+    mat-card{
+        width: 90%;
+    }
+    .nav-btn{
+        font-size: 14px;
+    }
+    .l-0{
+        margin-top: 0px;
+        font-size: 34px;
+    }
+    .l-1{
+        font-size: 20px;
+        height: 50px;
+    }
+    .l-2{
+        font-size: 20px;
+        height: 50px;
+    }
+    .nav-btns{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    input{
+        height: 40px;
+    }
+    mat-card-content{
+        justify-content: center;
+    }
+}
+/* Phone horizontal */
+@media (max-height: 420px){
+    mat-card{
+        width: 95%;
+        height: 95%;
+    }
+    
+    .nav-btn{
+        font-size: 14px;
+    }
+    .nav-btns{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    input{
+        height: 35px;
+    }
+    .l-0{
+        display: none;
+    }
+    .l-1{
+        font-size: 18px; 
+        margin-top: 0px;
+        height: 50px;
+    }
+    .l-2{
+        font-size: 18px;
+        margin-top: 0px;
+        height: 50px;
+    }
+    mat-card-content{
+        justify-content: center;
+    }
+    button{
+        height: 40px;
+    }
+}
+
+

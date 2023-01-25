@@ -1,5 +1,6 @@
 mat-toolbar{
     height: 10%;
+    width: 100%;
     background-color: #1D1D1D;
 }
 a{
@@ -53,3 +54,55 @@ a:hover{
 .nav-log-out:hover{
     background-color:rgb(138, 50, 28);
 }
+
+
+
+
+/* More than half */
+@media (max-width: 1400px){
+    .label-btn{
+        width: 30%;
+    }
+    .nav-btn{
+        width: 15%;
+    }
+}
+/* Half */
+@media (max-width: 1000px){
+    .label-btn{
+        width: 40%;
+        font-size: 36px;
+    }
+    .nav-btn{
+       width: 20%;
+       font-size: 30px;
+    }
+}
+/* Less than half */
+@media (max-width: 700px){
+    .label-btn{
+        display: none;
+    }
+    .nav-btn{
+        width: 33%;
+        font-size: 30px;
+     }
+}
+/* Phone vertical */
+@media (max-width: 540px){
+    .label-btn{
+        display: none;
+    }
+    .nav-btn{
+        width: 33%;
+        font-size: 24px;
+    }
+}
+/* Phone horizontal */
+@media (max-height: 420px){
+    mat-toolbar{
+        height: 20%;
+    }
+}
+
+
